@@ -1,0 +1,56 @@
+/* ============================================================
+   base.css — shared across every page
+   tokens · reset · fonts · nav chrome · placeholders
+   Page-specific styling lives in home.css / case.css.
+   ============================================================ */
+@import url("https://use.typekit.net/ncn7fvi.css");
+
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --ink: #181818;
+  --ink-soft: #6f6f6f;
+  --ink-faint: #a8a8a8;
+  --line: #eaeaea;
+  --accent: #9a3b2c;          /* rust — active nav, VIEW pill, accents */
+  --sans: "neue-haas-unica", 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
+  --mono: "ibm-plex-mono", ui-monospace, 'SF Mono', Menlo, monospace;
+  --serif: var(--sans);       /* serif dropped — headlines now use the grotesque */
+  --max: 1240px;
+  --radius: 14px;
+  --navh: 64px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.5; letter-spacing: -0.005em;
+}
+h1, h2, h3, p, ul, figure { margin: 0; }
+ul { list-style: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+@media (max-width: 640px) { .wrap { padding: 0 22px; } }
+
+.upper { text-transform: uppercase; letter-spacing: 0.06em; font-size: 12.5px; }
+
+/* NAV — shared chrome (page-specific link styles in home.css / case.css) */
+header.nav { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.86); backdrop-filter: saturate(180%) blur(10px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--navh); }
+.brand { display: flex; align-items: baseline; gap: 14px; }
+
+/* IMAGE PLACEHOLDERS (used by case studies; harmless elsewhere) */
+.ph { width: 100%; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--ink-faint); border: 1px solid var(--line); background: repeating-linear-gradient(135deg, transparent 0 22px, rgba(0,0,0,.03) 22px 24px), var(--card); }
+.ph.hero-art { aspect-ratio: 16/9; background: linear-gradient(120deg, #f3a85f 0%, #ec7f97 48%, #9a86d6 100%); border: none; }
+.ph.hero-art .ov { font-family: var(--serif); text-transform: none; letter-spacing: -0.01em; font-size: clamp(26px,3.4vw,40px); color: #fff; text-shadow: 0 1px 30px rgba(0,0,0,.18); }
+.ph.full { aspect-ratio: 16/9; }
+.ph.tall { aspect-ratio: 4/3; }
+/* Empty (no-src) placeholders are capped so they don't inflate the page into long
+   voids before real images are uploaded. Real <img> elements keep full height. */
+.ph.full.empty { aspect-ratio: auto; height: 240px; }
+@media (max-width: 640px) { .ph.full.empty { height: 168px; } }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

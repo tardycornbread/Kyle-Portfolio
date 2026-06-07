@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kyle Hao — Product Designer</title>
+<meta name="description" content="Kyle Hao is a UI/UX and digital product designer based in New York." />
+<link rel="stylesheet" href="/assets/base.css" />
+<link rel="stylesheet" href="/assets/home.css" />
+</head>
+<body>
+
+<!-- Static nav shell; content is rendered by /assets/home.js from /assets/data.js -->
+<header class="nav">
+  <div class="wrap nav-inner upper">
+    <a href="#top" class="brand">
+      <span class="nm" id="brand-nm">Kyle Hao</span>
+      <span class="rl" id="brand-rl">Product Designer</span>
+    </a>
+    <nav class="nav-mid">
+      <ul>
+        <li><a href="#work" class="active">Work</a></li>
+        <li><a href="#about" class="hide-sm">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right"><a href="#" id="resume">Resume</a></div>
+  </div>
+</header>
+
+<main id="site-root"></main>
+
+<script defer src="/assets/data.js"></script>
+<script defer src="/assets/common.js"></script>
+<script defer src="/assets/home.js"></script>
+
+</body>
+</html>

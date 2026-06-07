@@ -1,0 +1,147 @@
+/* ============================================================
+   case.css — case-study pages only
+   two-column layout, sticky TOC, content blocks, callouts, dark footer
+   Shared tokens/reset/nav-chrome/.ph live in base.css.
+   ============================================================ */
+
+/* Case studies run slightly larger body text than the home page */
+body { font-size: 17px; line-height: 1.6; }
+
+/* NAV (case variant) */
+.nav-inner { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+.brand > span:first-child { font-weight: 700; }
+.brand .role { color: var(--ink-faint); }
+@media (max-width: 760px) { .brand .role { display: none; } }
+.nav-links { display: flex; gap: 26px; align-items: center; }
+.nav-links a { color: var(--ink-soft); transition: color .15s ease; }
+.nav-links a:hover, .nav-links a.resume { color: var(--accent); }
+@media (max-width: 560px) { .nav-links a.hide-sm { display: none; } .nav-links { gap: 18px; } }
+
+/* TWO-COLUMN LAYOUT */
+.cs-layout { max-width: 1320px; margin: 0 auto; padding: 56px 40px 0; display: grid; grid-template-columns: 220px minmax(0, 880px); gap: 96px; align-items: start; }
+@media (max-width: 1040px) { .cs-layout { grid-template-columns: 1fr; gap: 0; max-width: 880px; } }
+@media (max-width: 640px) { .cs-layout { padding: 32px 22px 0; } }
+
+/* SIDEBAR TOC */
+.toc { position: sticky; top: calc(var(--navh) + 28px); align-self: start; min-width: 0; }
+.toc .back { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-soft); font-size: 14px; margin-bottom: 30px; transition: gap .2s ease, color .15s ease; }
+.toc .back:hover { color: var(--ink); gap: 12px; }
+.toc nav { display: grid; gap: 11px; }
+.toc nav a { color: var(--ink-faint); font-size: 15px; line-height: 1.3; transition: color .15s ease; border-left: 2px solid transparent; padding-left: 0; }
+.toc nav a:hover { color: var(--ink-soft); }
+.toc nav a.active { color: var(--ink); font-weight: 500; }
+
+/* ≤1040px: match the reference — the sidebar can't sit beside the content, so we
+   drop the section list and run a single content column. No horizontal chip bar
+   (its nowrap flex row previously inflated the grid track and overflowed the page).
+   A plain "← Back" link stays above the content. */
+@media (max-width: 1040px) {
+  .toc { position: static; margin-bottom: 4px; }
+  .toc nav { display: none; }
+}
+
+/* MAIN */
+.cs-main { min-width: 0; padding-bottom: 40px; }
+.cs-eyebrow { color: var(--ink-faint); margin-bottom: 20px; }
+.cs-main h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 58px); line-height: 1.03; letter-spacing: -0.02em; }
+
+figure.hero { margin: 36px 0 0; }
+/* The current hero asset is a pre-composed logo-on-green panel, so object-fit:cover
+   fills the frame cleanly. When a real product screenshot is dropped in, keep cover. */
+.hero-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #1f7a4d; border-radius: var(--radius); display: block; }
+/* On narrow screens cover would crop the wide wordmark to "Neta." — contain shows
+   the full mark, letterboxed on the matching green panel. */
+@media (max-width: 640px) { .hero-img { object-fit: contain; } }
+
+/* real images inside content blocks (fall back to .ph placeholders when no src) */
+.shot-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); display: block; }
+.shot-img.contain { object-fit: contain; background: #fbfbfa; }
+
+/* METADATA (below hero) — a spec-sheet of label/value rows. Tolerates long values
+   like "Focus" without forcing the short ones (Timeline) to wrap. */
+.meta { display: grid; gap: 0; margin-top: 34px; border-top: 1px solid var(--line); }
+.meta > div { display: grid; grid-template-columns: 168px 1fr; gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+@media (max-width: 560px) { .meta > div { grid-template-columns: 1fr; gap: 5px; padding: 13px 0; } }
+.meta .k { color: var(--ink-faint); margin: 0; font-family: var(--mono); letter-spacing: 0.04em; }
+.meta .v { font-size: 16px; line-height: 1.45; }
+
+/* BODY BLOCKS */
+.body { margin-top: 16px; counter-reset: sec; }
+/* Each .block wraps a section heading. A hairline + generous lead-in + a numbered,
+   inked label chunk the long page into scannable sections. */
+.block { padding-top: 64px; margin-top: 30px; border-top: 1px solid var(--line); }
+.block:first-child { border-top: none; }
+.block h2 { color: var(--ink); font-weight: 700; font-size: 13px; margin-bottom: 18px; scroll-margin-top: calc(var(--navh) + 24px); }
+.block h2::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) " · "; color: var(--accent); font-family: var(--mono); letter-spacing: 0.02em; }
+/* Vertical rhythm: every block gets a consistent lead-in gap so paragraphs never
+   jam against the callout / figure / list above them. Margins collapse between
+   siblings, so these set the *gap*, not an additive stack. Consecutive paragraphs
+   sit tighter (16px) than block-to-block transitions (~30px). */
+/* .body .lede (0,2,0) so the narrower measure wins over .body p (0,1,1) below */
+.body .lede { font-family: var(--serif); font-size: clamp(24px,3vw,34px); line-height: 1.28; letter-spacing: -0.015em; font-weight: 400; max-width: 30rem; margin: 30px 0 24px; }
+.body p { color: var(--ink-soft); max-width: 38rem; margin-top: 24px; }
+.body p + p { margin-top: 16px; }
+
+ul.bullets { margin-top: 30px; display: grid; gap: 18px; }
+ul.bullets li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+ul.bullets .num { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-size: 13px; color: var(--ink-soft); }
+ul.bullets .t { font-weight: 700; }
+ul.bullets .d { color: var(--ink-soft); display: block; margin-top: 2px; }
+
+figure.shot { margin: 38px 0 0; }
+figure.shot figcaption { margin-top: 10px; font-size: 13px; color: var(--ink-faint); }
+figure.shot figcaption .fign { color: var(--ink-soft); font-weight: 500; margin-right: 8px; font-family: var(--mono); }
+.ph.full.empty .fign-ph { font-size: 13px; letter-spacing: 0.04em; font-family: var(--mono); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+figure.shot .grid2 { margin-top: 0; }
+/* multiple images stacked vertically within one figure */
+.shot-stack { display: grid; gap: 16px; }
+/* responsive 16:9 video embed (Vimeo/YouTube iframe) */
+.video-embed { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #000; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 22px; }
+@media (max-width: 640px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+
+/* auto-fit so a 3-item group renders 3-up (no orphan) and a 2-item group 2-up,
+   both collapsing to 1-up on narrow screens. */
+.flows { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 30px; }
+@media (max-width: 640px) { .flows { grid-template-columns: 1fr; } }
+.flow { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.flow .t { font-weight: 700; margin-bottom: 6px; }
+.flow .d { color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+
+.callout { border-radius: var(--radius); padding: 28px; margin-top: 32px; }
+.callout.main { background: var(--accent); color: #fff; }
+.callout.alt { border: 1px solid var(--line); }
+.callout .k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; opacity: .75; }
+.callout.alt .k { color: var(--ink-faint); opacity: 1; }
+.callout .big { font-family: var(--serif); font-size: clamp(21px,2.6vw,28px); line-height: 1.32; letter-spacing: -0.01em; }
+
+/* BACK-TO-TOP — mobile/tablet only (where the sidebar TOC is hidden). Injected by
+   case.js; fades in after scrolling. 44px = min touch target. */
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 44px; height: 44px;
+  border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,.9);
+  backdrop-filter: saturate(180%) blur(8px); color: var(--ink); font-size: 18px; line-height: 1;
+  cursor: pointer; display: none; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+@media (max-width: 1040px) { .to-top { display: flex; } }
+.to-top.show { opacity: 1; transform: translateY(0); }
+
+/* PAGER */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--line); }
+@media (max-width: 560px) { .pager { grid-template-columns: 1fr; } }
+.pager a { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; transition: border-color .2s ease, transform .2s ease; }
+.pager a:hover { border-color: #d9d6cd; transform: translateY(-2px); }
+.pager .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); }
+.pager .tt { font-weight: 500; margin-top: 6px; }
+.pager .next { text-align: right; }
+
+/* FOOTER (dark) */
+footer.foot { background: var(--ink); color: #f3f1ea; margin-top: 80px; }
+footer.foot .fwrap { max-width: 1320px; margin: 0 auto; padding: 56px 40px 40px; }
+@media (max-width: 640px) { footer.foot .fwrap { padding: 48px 22px 36px; } }
+.foot-links { display: flex; flex-wrap: wrap; gap: 14px 24px; }
+.foot-links a { color: #cfccc2; font-size: 15px; }
+.foot-links a:hover { color: #fff; }
+.foot-meta { margin-top: 32px; padding-top: 20px; border-top: 1px solid #34332e; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: #79776f; font-size: 13px; }
