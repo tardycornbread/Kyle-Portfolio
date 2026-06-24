@@ -26,14 +26,16 @@
     document.querySelector('#brand-rl').textContent = profile.role;
     document.querySelector('#resume').setAttribute('href', profile.resumeUrl);
 
+    const hasTimeline = Array.isArray(home.experience) && home.experience.length > 0;
+
     root.innerHTML = `
       <section class="hero wrap" id="top">
-        <div class="hero-grid">
+        <div class="hero-grid${hasTimeline ? '' : ' no-timeline'}">
           <h1>${esc(home.hero.pre)}<em>${esc(home.hero.em)}</em>${esc(home.hero.post)}</h1>
-          <ul class="timeline">
+          ${hasTimeline ? `<ul class="timeline">
             ${home.experience.map(([yr, org, role]) => `
               <li><span class="yr">${esc(yr)}</span><span class="org">${esc(org)}</span><span class="role">${esc(role)}</span></li>`).join('')}
-          </ul>
+          </ul>` : ''}
         </div>
       </section>
 

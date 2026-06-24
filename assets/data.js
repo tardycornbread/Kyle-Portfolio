@@ -37,13 +37,13 @@ window.SITE = {
       post: '.'
     },
     // newest first — [year, company, role]
-    experience: [
-      ['2026', 'Independent Practice', 'Design Engineer'],
-      ['2025', 'Company A', 'Software Engineering Intern'],
-      ['2025', 'Company B', 'Product Design Intern'],
-      ['2024', 'Company C', 'Software Engineering Intern'],
-      ['2023', 'Company D', 'Product Design + Engineering Intern']
-    ],
+    // Hidden for now — move these entries back into `experience` to show the hero timeline again:
+    //   ['2026', 'Independent Practice', 'Design Engineer'],
+    //   ['2025', 'Company A', 'Software Engineering Intern'],
+    //   ['2025', 'Company B', 'Product Design Intern'],
+    //   ['2024', 'Company C', 'Software Engineering Intern'],
+    //   ['2023', 'Company D', 'Product Design + Engineering Intern']
+    experience: [],
     about: {
       pre: "I've spent the last few years where design and engineering overlap — ",
       soft: 'turning fuzzy problems into refined, shippable products, sweating the details from first concept to final pixel.',
@@ -190,6 +190,7 @@ window.SITE = {
       status: 'Concept',
       year: '2025',
       gradient: 'linear-gradient(135deg, #2f6bff 0%, #1e49c8 60%, #16357e 100%)',
+      cover: '/assets/img/bridge/hero.png',
       href: '/projects/bridge-lab.html',
       caseStudy: {
         eyebrowName: 'Bridge Lab',
@@ -277,15 +278,12 @@ window.SITE = {
           { type: 'image', src: '/assets/img/bridge/wireframes.png', contain: true, label: 'Mid-fidelity wireframes', caption: 'Home, project listing, project detail, application flow, community, program, and dashboard.' },
 
           { type: 'heading', text: 'User Testing' },
-          { type: 'lede', text: 'Five participants tested the core flows.' },
-          { type: 'text', text: 'Goals: understand attitudes and pain points around project collaboration, mentorship, and startup generation; assess Project Application, Mentorship Programs, Smart Matching, and Community Groups; and identify opportunities to improve project initiation, mentorship access, and community building. Participants were Jojo, Eric, Echo, An, and Mandy — across Communication Design, Product Design, Design Technology, and Interior Design.' },
-          { type: 'list', items: [
-            ['85% found the Project Application clear', 'Timelines, team sizes, and roles read well; users requested more detailed mentor profiles — portfolios or past work — to build trust.'],
-            ['80% valued the Mentorship Program', 'Especially the flexibility of individual and group sessions; they wanted more visuals and a clearer distinction from platforms like LinkedIn.'],
-            ['70% raised concerns about Community Groups', 'Worried about information overload in large groups; requested more filtering options and a clearer group structure.']
-          ]},
-          { type: 'image', src: '/assets/img/bridge/user-insights.png', contain: true, label: 'User research insights', caption: 'Positives and improvements across Project Application, Mentorship, Smart Matching, and Community Groups.' },
-          { type: 'callout', kind: 'alt', k: 'Revised design goals', text: 'Enhance the visual representation of projects, deepen mentor profiles (portfolios and resumes), and tame large-group notifications with personalized filters.' },
+          { type: 'lede', text: 'Five participants tested the core flows to refine BridgeLab’s key features.' },
+          { type: 'text', text: 'Objectives: understand attitudes and pain points around project collaboration and mentorship; assess Project Application, Mentorship Programs, Smart Matching, and Community Groups; and identify opportunities to improve project initiation, mentorship access, and community building.' },
+          { type: 'image', src: '/assets/img/bridge/testing-synthesis.png', label: 'Synthesis, goal & participants', caption: 'User testing & synthesis, the goal, and the five participants — Jojo, Eric, Echo, An, and Mandy.' },
+          { type: 'image', src: '/assets/img/bridge/testing-results.png', label: 'Key results', caption: 'Key results — 85% found the application clear, 80% valued mentorship, 70% raised community-group concerns.' },
+          { type: 'image', src: '/assets/img/bridge/testing-insights.png', label: 'User research insights', caption: 'Positives and improvements across Project Application, Mentorship, Smart Matching, and Community Groups.' },
+          { type: 'image', src: '/assets/img/bridge/testing-learnings.png', label: 'User feedback & revised design goals', caption: 'Three key learnings — enhance visuals, deepen mentor profiles, and personalize large-group notifications.' },
 
           { type: 'heading', text: 'Brand Strategy' },
           { type: 'flows', items: [
@@ -304,9 +302,11 @@ window.SITE = {
         ]
       },
       next: { slug: 'neta-ai' }
-    },
+    }
 
-    { slug: 'voice-assistant', title: 'Voice Assistant', caption: 'Conversational flows, reimagined', status: 'Shipped', year: '2025',
+    /* Placeholder cards hidden for now — uncomment any (add a comma after the entry
+       above) to show them again on the home grid:
+    ,{ slug: 'voice-assistant', title: 'Voice Assistant', caption: 'Conversational flows, reimagined', status: 'Shipped', year: '2025',
       href: '#', gradient: 'linear-gradient(160deg, #0b1f4d 0%, #16357e 60%, #2b59c9 100%)' },
 
     { slug: 'mobile-first-redesign', title: 'Mobile-first Redesign', caption: 'A core surface, rebuilt for mobile', status: 'Handed off', year: '2025',
@@ -320,5 +320,6 @@ window.SITE = {
 
     { slug: 'climate-platform', title: 'Climate Platform', caption: 'Innovation management for climate teams', status: 'Handed off', year: '2023',
       href: '#', gradient: 'linear-gradient(135deg, #f6c177 0%, #e98a8a 55%, #d36f9f 100%)' }
+    */
   ]
 };
