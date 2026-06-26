@@ -121,7 +121,7 @@ window.SITE = {
           ]},
 
           { type: 'heading', text: 'The Reframe' },
-          { type: 'lede', text: 'Organized around how data is stored, not how decisions are made.' },
+          { type: 'lede', text: 'Reorganized around how decisions get made.' },
           { type: 'flows', items: [
             ['How the system is organized', 'SKU → Jurisdictions → Regulations → Provisions.'],
             ['How the user thinks', 'What is broken? → How urgent is it? → Which jurisdiction or regulation causes it? → What should I do next?']
@@ -171,8 +171,8 @@ window.SITE = {
           { type: 'video', src: 'https://player.vimeo.com/video/1189614755?title=0&byline=0&portrait=0&dnt=1', label: 'Interaction walkthrough', caption: 'Prototype walkthrough of the redesigned SKU Compliance flow.' },
 
           { type: 'heading', text: 'What the Team Responded To' },
-          { type: 'text', text: 'The team reviewed the redesigned list view and detail page on April 13. Grace approved the status-forward color-bar direction. The hover-on-row interaction was accepted as the disclosure pattern. Column consolidation moved into immediate implementation. The trend-map exploration was postponed pending a review workflow another team was developing.' },
-          { type: 'text', text: 'The compliance-page redesign — what Grace called the team’s biggest ask — was assigned to Christina and me as the most challenging piece of work in the project. A week later, the column merge and expand/collapse pattern shipped to production; the hover feature was queued for the following week.' },
+          { type: 'text', text: 'The team reviewed the redesigned list view and detail page on April 13. Grace approved the status-forward color-bar direction, and the row-level disclosure pattern and column consolidation were accepted into implementation. The trend-map exploration was set aside, pending a review workflow another team was developing.' },
+          { type: 'text', text: 'The compliance-page redesign was what Grace called the team’s biggest ask — the most challenging piece of work in the project. The redesign shown here is mine; other directions were explored, but none were carried forward. What landed was the reframe this case study is built on: the list page reorganized so urgency reads before detail, and the detail page restructured around the user’s question order rather than the data model. Both shipped to production.' },
           { type: 'callout', kind: 'alt', k: 'Strategic note', text: 'These decisions tightened the work toward what the team actually needed to ship — not toward what would make for a more visually ambitious case study.' },
 
           { type: 'heading', text: 'Reflection' },
