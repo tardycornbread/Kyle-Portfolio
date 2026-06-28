@@ -45,12 +45,12 @@ window.SITE = {
     //   ['2023', 'Company D', 'Product Design + Engineering Intern']
     experience: [],
     about: {
-      pre: "I've spent the last few years where design and engineering overlap — ",
-      soft: 'turning fuzzy problems into refined, shippable products, sweating the details from first concept to final pixel.',
+      pre: 'I started in editorial design and now build dense, complicated products — ',
+      soft: 'dashboards, compliance tools, interfaces that show users everything and help users decide nothing. I work end to end and build what I design (HTML/CSS, AI tools). Based in New York, open to product, web, and interaction roles.',
       info: [
         ['Based in', 'New York'],
         ['Focus', 'Product · UI/UX · Front-end'],
-        ['Tools', 'Figma · React · TS'],
+        ['Tools', 'Figma · InDesign · HTML/CSS · AI tooling'],
         ['Status', 'Open to work']
       ]
     },
