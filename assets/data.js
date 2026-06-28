@@ -18,15 +18,13 @@ window.SITE = {
     description: 'Kyle Hao is a UI/UX and digital product designer based in New York.',
     location: 'New York',
     year: '2026',
-    resumeUrl: '#'
+    resumeUrl: '/assets/Kyle-Hao-Resume.pdf'
   },
 
   // Used by the home footer AND every case-study footer (single source).
   social: [
-    { label: 'Email', url: 'mailto:hello@kylehao.com' },
-    { label: 'LinkedIn', url: '#' },
-    { label: 'GitHub', url: '#' },
-    { label: 'X', url: '#' }
+    { label: 'Email', url: 'mailto:azykh21@pm.me' }
+    // LinkedIn / GitHub / X removed for now — add back as { label, url } entries when ready.
   ],
 
   // Home-page sections.
