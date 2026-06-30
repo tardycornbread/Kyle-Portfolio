@@ -7,9 +7,11 @@
 <meta name="description" content="A case study by Kyle Hao." />
 <link rel="stylesheet" href="/assets/base.css" />
 <link rel="stylesheet" href="/assets/case.css" />
+<!-- Soft password gate: lock before first paint to avoid a content flash. -->
+<script>if(sessionStorage.getItem('neta-unlocked')!=='1')document.documentElement.classList.add('gated-locked');</script>
 </head>
-<!-- The ONLY per-project line: data-slug maps this page to a project in /assets/data.js -->
-<body data-slug="neta-ai">
+<!-- data-slug maps this page to a project in /assets/data.js; data-gate-* drives the soft password gate (see assets/gate.js). -->
+<body data-slug="neta-ai" data-gate="neta-unlocked" data-gate-hash="7df42e07c81d56deaf7e2d9d3f9c334ad4cc51b0e89dd3998b22b06546d58b57" data-gate-title="Neta AI">
 
 <header class="nav">
   <div class="nav-inner upper">
@@ -44,6 +46,7 @@
 <script defer src="/assets/data.js"></script>
 <script defer src="/assets/common.js"></script>
 <script defer src="/assets/case.js"></script>
+<script defer src="/assets/gate.js"></script>
 
 </body>
 </html>
