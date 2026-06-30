@@ -3,7 +3,7 @@
    tokens · reset · fonts · nav chrome · placeholders
    Page-specific styling lives in home.css / case.css.
    ============================================================ */
-@import url("https://use.typekit.net/ncn7fvi.css");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 :root {
   --bg: #ffffff;
@@ -13,9 +13,9 @@
   --ink-faint: #a8a8a8;
   --line: #eaeaea;
   --accent: #9a3b2c;          /* rust — active nav, VIEW pill, accents */
-  --sans: "neue-haas-unica", 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
-  --mono: "ibm-plex-mono", ui-monospace, 'SF Mono', Menlo, monospace;
-  --serif: var(--sans);       /* serif dropped — headlines now use the grotesque */
+  --sans: 'Inter', 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
+  --mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;   /* serif restored for display */
   --max: 1240px;
   --radius: 14px;
   --navh: 64px;

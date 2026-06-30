@@ -9,7 +9,7 @@ body { font-size: 17px; line-height: 1.6; }
 
 /* NAV (case variant) */
 .nav-inner { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
-.brand > span:first-child { font-weight: 700; }
+.brand > span:first-child { font-weight: 600; }
 .brand .role { color: var(--ink-faint); }
 @media (max-width: 760px) { .brand .role { display: none; } }
 .nav-links { display: flex; gap: 26px; align-items: center; }
@@ -43,7 +43,7 @@ body { font-size: 17px; line-height: 1.6; }
 /* MAIN */
 .cs-main { min-width: 0; padding-bottom: 40px; }
 .cs-eyebrow { color: var(--ink-faint); margin-bottom: 20px; }
-.cs-main h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 58px); line-height: 1.03; letter-spacing: -0.02em; }
+.cs-main h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(36px, 5.2vw, 62px); line-height: 1.04; letter-spacing: -0.005em; }
 
 figure.hero { margin: 36px 0 0; }
 /* The current hero asset is a pre-composed logo-on-green panel, so object-fit:cover
@@ -71,21 +71,21 @@ figure.hero { margin: 36px 0 0; }
    inked label chunk the long page into scannable sections. */
 .block { padding-top: 64px; margin-top: 30px; border-top: 1px solid var(--line); }
 .block:first-child { border-top: none; }
-.block h2 { color: var(--ink); font-weight: 700; font-size: 13px; margin-bottom: 18px; scroll-margin-top: calc(var(--navh) + 24px); }
+.block h2 { color: var(--ink); font-weight: 600; font-size: 13px; margin-bottom: 18px; scroll-margin-top: calc(var(--navh) + 24px); }
 .block h2::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) " · "; color: var(--accent); font-family: var(--mono); letter-spacing: 0.02em; }
 /* Vertical rhythm: every block gets a consistent lead-in gap so paragraphs never
    jam against the callout / figure / list above them. Margins collapse between
    siblings, so these set the *gap*, not an additive stack. Consecutive paragraphs
    sit tighter (16px) than block-to-block transitions (~30px). */
 /* .body .lede (0,2,0) so the narrower measure wins over .body p (0,1,1) below */
-.body .lede { font-family: var(--serif); font-size: clamp(24px,3vw,34px); line-height: 1.28; letter-spacing: -0.015em; font-weight: 400; max-width: 30rem; margin: 30px 0 24px; }
+.body .lede { font-family: var(--serif); font-size: clamp(26px,3.2vw,38px); line-height: 1.22; letter-spacing: -0.005em; font-weight: 500; max-width: 26rem; margin: 30px 0 24px; }
 .body p { color: var(--ink-soft); max-width: 38rem; margin-top: 24px; }
 .body p + p { margin-top: 16px; }
 
 ul.bullets { margin-top: 30px; display: grid; gap: 18px; }
 ul.bullets li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
 ul.bullets .num { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-size: 13px; color: var(--ink-soft); }
-ul.bullets .t { font-weight: 700; }
+ul.bullets .t { font-weight: 500; }
 ul.bullets .d { color: var(--ink-soft); display: block; margin-top: 2px; }
 
 figure.shot { margin: 38px 0 0; }
@@ -107,7 +107,7 @@ figure.shot .grid2 { margin-top: 0; }
 .flows { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 30px; }
 @media (max-width: 640px) { .flows { grid-template-columns: 1fr; } }
 .flow { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-.flow .t { font-weight: 700; margin-bottom: 6px; }
+.flow .t { font-weight: 600; margin-bottom: 6px; }
 .flow .d { color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
 
 .callout { border-radius: var(--radius); padding: 28px; margin-top: 32px; }
@@ -115,7 +115,7 @@ figure.shot .grid2 { margin-top: 0; }
 .callout.alt { border: 1px solid var(--line); }
 .callout .k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; opacity: .75; }
 .callout.alt .k { color: var(--ink-faint); opacity: 1; }
-.callout .big { font-family: var(--serif); font-size: clamp(21px,2.6vw,28px); line-height: 1.32; letter-spacing: -0.01em; }
+.callout .big { font-family: var(--serif); font-weight: 500; font-size: clamp(23px,2.8vw,32px); line-height: 1.26; letter-spacing: -0.005em; }
 
 /* BACK-TO-TOP — mobile/tablet only (where the sidebar TOC is hidden). Injected by
    case.js; fades in after scrolling. 44px = min touch target. */

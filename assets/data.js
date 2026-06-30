@@ -59,6 +59,25 @@ window.SITE = {
     }
   },
 
+  /* ---- FUN ---------------------------------------------------------------
+     Side projects / experiments shown on /fun.html. Cards link OUT (external).
+     Item fields:  title, sub (context/award), cap (one-liner), href, gradient,
+                   cover? (thumbnail image instead of gradient), darkTitle?
+     Replace the placeholders below with your real projects.
+     ------------------------------------------------------------------------ */
+  fun: {
+    hero: { pre: 'Side quests — ', em: 'things I build for the joy of it', post: '.' },
+    intro: 'Hackathons, experiments, and small tools — less polished, more play.',
+    items: [
+      { title: 'Project One', sub: 'Hackathon · 1st place', cap: 'One line on what it is and what you built.', href: '#',
+        gradient: 'linear-gradient(135deg, #2f6bff 0%, #1e49c8 100%)' },
+      { title: 'Project Two', sub: 'Personal project', cap: 'One line on what it is and what you built.', href: '#',
+        gradient: 'linear-gradient(135deg, #1f7a4d 0%, #0e4a2d 100%)' },
+      { title: 'Project Three', sub: 'Experiment', cap: 'One line on what it is and what you built.', href: '#',
+        gradient: 'linear-gradient(135deg, #f6c177 0%, #e98a8a 55%, #d36f9f 100%)' }
+    ]
+  },
+
   /* ---- PROJECTS ----------------------------------------------------------
      Card fields:  slug, title, caption, status, year, gradient, darkTitle?, href
      Optional caseStudy: { eyebrowName?, tagline, heroLabel, meta[], blocks[] }
@@ -297,6 +316,84 @@ window.SITE = {
           { type: 'heading', text: 'Final Designs' },
           { type: 'image', src: '/assets/img/bridge/final-project-listing.png', label: 'Project listing', caption: 'Browse and filter projects, powered by Smart Matching.' },
           { type: 'image', src: '/assets/img/bridge/final-dashboard.png', label: 'Project dashboard', caption: 'Task tracking across To Do, In Progress, and Completed, with a project overview.' }
+        ]
+      },
+      next: { slug: 'lifeband' }
+    },
+
+    {
+      slug: 'lifeband',
+      title: 'LifeBand',
+      caption: 'An AI wearable designed to make itself unnecessary',
+      status: 'Hackathon',
+      year: '2026',
+      gradient: 'linear-gradient(140deg, #141414 0%, #2b1d14 55%, #d97706 115%)',
+      cover: '/assets/img/lifeband/cover.png',
+      href: '/projects/lifeband.html',
+      caseStudy: {
+        eyebrowName: 'LifeBand',
+        tagline: 'The only AI that succeeds by teaching you not to need it.',
+        heroImage: '/assets/img/lifeband/hero.png',
+        heroLabel: 'LifeBand',
+        meta: [
+          ['Role', 'Product Design & Prototyping'],
+          ['Team', 'Liftlog — with Joyce Jiang & Ifetola Ogunde'],
+          ['Timeline', 'Feb 27–28, 2026 · 24 hours'],
+          ['Context', 'AI Startup Design Hackathon · Parsons × U. of Arizona']
+        ],
+        blocks: [
+          { type: 'lede', text: 'The brief: design a product system for 2035 — not an app.' },
+          { type: 'text', text: 'I was skeptical — 2035 felt far away and vague — but it was a chance to think bigger than I normally would in a class project. This was the 2026 AI Startup Design Hackathon at Parsons, hosted by Designpreneurs Hackathon with the University of Arizona’s Franke Honors College: 14 teams, 29 hackers, 24 hours, judges from IDEO, Microsoft, and BCG, with Innovation & Design weighted at 40%.' },
+          { type: 'text', text: 'Our team registered as Liftlog — me and Joyce Jiang (Parsons) on design and prototyping, and Ifetola Ogunde (University of Arizona) on business strategy.' },
+
+          { type: 'heading', text: 'Starting With Something Personal' },
+          { type: 'lede', text: 'We picked student burnout because everyone on the team had felt it.' },
+          { type: 'text', text: 'The numbers backed us up: over 80% of college seniors report moderate-to-severe burnout, mental-health appointments have 3+ week wait times, and most students can’t even recognize they’re burning out until they’ve already crashed. Their life data is scattered across 5+ apps that don’t talk to each other — and they normalize the struggle because everyone around them looks the same.' },
+          { type: 'text', text: 'We ran a quick survey to test our assumptions. The biggest finding: 100% of respondents said they’d experienced burnout during school. Every single person.' },
+          { type: 'image', src: '/assets/img/lifeband/burnout-research.png', label: 'Burnout research', caption: 'Survey findings — 100% had experienced burnout; most ignore the early signs until they crash.' },
+
+          { type: 'heading', text: 'The Hardest Part: Figuring Out What to Build' },
+          { type: 'text', text: 'This is where we spent about half the hackathon. Everyone had different directions and none of them felt good enough. We went through three distinct concepts before landing on the final idea.' },
+          { type: 'image', src: '/assets/img/lifeband/concept-exploration.png', contain: true, label: 'Concept exploration', caption: 'Mapping directions across the team before the idea clicked.' },
+          { type: 'list', items: [
+            ['Concept 1 — “Life Weather”', 'A personal digital twin that forecasts your burnout trajectory like a weather report. Cool, but still basically an app.'],
+            ['Concept 2 — “The Atmosphere”', 'An ambient system where your room responds to your stress — lighting shifts, music adapts, no screens. The philosophy felt right but was too abstract for a 5-minute pitch.'],
+            ['Concept 3 — “The Mirror That Fades”', 'A system designed to make itself unnecessary: it maps your patterns, helps you recognize them, then gradually goes quiet. This was the idea that clicked.']
+          ]},
+          { type: 'text', text: 'After talking with our mentor Sanjana, she pushed us to think about the physical form this system could take. Combining the fading philosophy with a wearable, LifeBand came together.' },
+          { type: 'image', src: '/assets/img/lifeband/key-features.png', label: 'Key features', caption: 'Three core features: Cross-Domain Burnout Prediction, Neuro Pulse as Alert, and the Bio-Synced Reward Protocol.' },
+          { type: 'flows', items: [
+            ['Cross-Domain Burnout Prediction', 'Passive data collection builds a personalized signature that catches your pattern and surfaces your risk before you feel it.'],
+            ['Neuro Pulse as Alert', 'When risk escalates, the wristband delivers stimulation directly to the nervous system — calming panic in real time, without a screen or a pill.'],
+            ['Bio-Synced Reward Protocol', 'Consistent habits unlock a resonance pulse that guides the body into deep parasympathetic recovery.']
+          ]},
+
+          { type: 'heading', text: 'The Solution: LifeBand' },
+          { type: 'lede', text: 'A wrist-worn device that detects early burnout and intervenes through vagus-nerve stimulation.' },
+          { type: 'image', src: '/assets/img/lifeband/lifeband-system.png', label: 'LifeBand system', caption: 'How the system reads body, behavior, and academic context.' },
+          { type: 'text', text: 'LifeBand reads patterns across your body data (heart rate, sleep, skin temperature), your behavior (calendar, spending, messaging), and your academic context (deadlines, exams, course load).' },
+          { type: 'text', text: 'The key insight: burnout isn’t caused by one thing. But when sleep drops and spending shifts and your calendar packs and you stop replying to messages — that pattern together is what predicts a crash. The device catches it and responds through your nervous system. No screen, no notification, no effort.' },
+          { type: 'callout', kind: 'main', k: 'The Fade Protocol', text: 'A four-year reduction in interventions matched to college. Freshman year it’s fully active; by senior year it’s basically dormant. By graduation you’ve built the self-regulation the device used to provide — you don’t need it anymore.' },
+          { type: 'text', text: 'That tagline — “the only AI that succeeds by teaching you not to need it” — became a filter for every design decision. If a feature would increase engagement or create dependency, we cut it.' },
+
+          { type: 'heading', text: 'Designing the Pitch' },
+          { type: 'text', text: 'Joyce and I built a visual system for the deck — dark backgrounds, IBM Plex Sans, and a palette tied to five wellness states: amber for Flow, teal for Drift, purple for Strain, coral for Threshold, and green for Recovery.' },
+          { type: 'text', text: 'For video and visuals we used ChatGPT for scripting, Motionary for mockups and transitions, Jitter for Figma animations, and Seedance for storyboard-to-video. Claude helped with system architecture and pitch strategy.' },
+          { type: 'video', src: 'https://player.vimeo.com/video/1173918695?title=0&byline=0&portrait=0&dnt=1', label: 'Pitch video', caption: 'Concept film for the LifeBand pitch.' },
+
+          { type: 'heading', text: 'The Presentation' },
+          { type: 'text', text: 'Five minutes. I covered the product and the Fade Protocol, Joyce covered design and UX, and Ifetola presented the business model.' },
+          { type: 'text', text: 'Right before we went up I was nervous — not stage fright, more “I’m not sure our idea is fully ready.” We’d spent so long figuring out the concept that execution felt tight. But once we started, it flowed.' },
+          { type: 'text', text: 'We didn’t place in the top three. That stung after going all in for 24 hours.' },
+          { type: 'image', src: '/assets/img/lifeband/team-certificates.png', label: 'Team certificates', caption: 'Liftlog with our certificates of achievement.' },
+
+          { type: 'heading', text: 'What I Took Away' },
+          { type: 'list', items: [
+            ['Working under pressure', 'I found out I’m actually productive when the clock is ticking and there’s no room to overthink — I didn’t know that about myself. 24 hours forced decisions that would have taken weeks in a class project.'],
+            ['Pivoting is a design method', 'Three concepts felt chaotic, but each kept the best of the last: “Life Weather” gave us the predictive model, “The Atmosphere” the ambient philosophy, “The Mirror That Fades” the designed-obsolescence principle, and LifeBand gave it a form you can hold. The pivots weren’t wasted — they were the process.'],
+            ['Alignment before execution', 'Different tools, working styles, and visual instincts mean coordination eats time you don’t have. The lesson isn’t to only work with people who think like you — it’s that alignment has to happen before execution starts, not during it.']
+          ]},
+          { type: 'text', text: 'We didn’t place — but the experience was worth more than any placement. Thanks to Sally Chung and Scott for organizing, to our mentors, and to Joyce Jiang and Ifetola Ogunde for 24 hours of messy, ambitious work.' }
         ]
       },
       next: { slug: 'neta-ai' }
