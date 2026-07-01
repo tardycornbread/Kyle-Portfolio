@@ -396,6 +396,55 @@ window.SITE = {
           { type: 'text', text: 'We didn’t place — but the experience was worth more than any placement. Thanks to Sally Chung and Scott for organizing, to our mentors, and to Joyce Jiang and Ifetola Ogunde for 24 hours of messy, ambitious work.' }
         ]
       },
+      next: { slug: 'top-voices' }
+    },
+
+    {
+      slug: 'top-voices',
+      title: 'Top Voices',
+      caption: 'Brand and marketing site for a pre-seed startup, built for their investor pitch',
+      status: 'Live',
+      year: '2025',
+      gradient: 'linear-gradient(140deg, #7ea2dd 0%, #3f6bd0 55%, #1e49c8 115%)',
+      cover: '/assets/img/top-voices/hero.png',
+      href: '/projects/top-voices.html',
+      caseStudy: {
+        eyebrowName: 'Top Voices — Brand & Web Design',
+        tagline: 'The public face of a pre-seed startup — designed and built for their investor pitch.',
+        heroImage: '/assets/img/top-voices/hero.png',
+        heroLabel: 'Top Voices',
+        meta: [
+          ['Focus', 'Brand Direction · Information Architecture · Visual Design · Front-End Build'],
+          ['Role', 'End-to-end design, shipped the live static site'],
+          ['Team', 'Solo build · founder (direction & content)'],
+          ['Timeline', 'Aug – Sep 2025']
+        ],
+        blocks: [
+          { type: 'lede', text: 'Designing and shipping the public face of Top Voices — a pre-seed, AI-powered marketing startup — for the moment an investor opens the site.' },
+
+          { type: 'heading', text: 'The brief' },
+          { type: 'text', text: 'A pre-seed startup needed a credible web presence for investor conversations — the site an investor clicks during or after a pitch. The challenge was making a broad “marketing, PR, and paid media across every channel and industry” offering read as focused and confident rather than vague.' },
+
+          { type: 'heading', text: 'Information Architecture' },
+          { type: 'lede', text: 'Five pages, each answering one investor question.' },
+          { type: 'text', text: 'I structured the site around the questions an investor actually asks, in order: What is this? (Home) → Who is it for? (Industry) → How does it reach them? (Platform) → Who already trusts it? (Clients) → Who’s behind it, and how do I reach them? (About and Contact).' },
+          { type: 'flows', items: [
+            ['Organized by demand', 'Six industry verticals — Education, Healthcare, Tech, Consumer Brands, Content & Culture, and Social & Community — so a visitor sees their own world first.'],
+            ['Organized by reach', 'A platform page mapping coverage across 24+ channels, from LinkedIn and TikTok to WeChat, Bilibili, and Red Note — evidence the “everywhere” claim is real.']
+          ]},
+          { type: 'image', src: '/assets/img/top-voices/industry.png', label: 'Industry page', caption: 'Industries We Serve — six verticals, each with its own imagery and one-line promise.' },
+          { type: 'image', src: '/assets/img/top-voices/platform.png', label: 'Platform page', caption: 'Platforms We Cover — 24+ channels across Western and Chinese ecosystems.' },
+
+          { type: 'heading', text: 'Visual System' },
+          { type: 'lede', text: 'Premium and editorial — not another SaaS gradient.' },
+          { type: 'text', text: 'A serif display headline over an ink-in-water hero sets a confident, editorial tone; a clean sans carries the body. Dark and outlined CTA pills, image-forward industry cards, and a warm off-white ground keep the whole thing feeling considered — the visual argument that a small team can already look category-ready.' },
+          { type: 'image', src: '/assets/img/top-voices/style-guide.png', contain: true, label: 'Visual system', caption: 'The Top Voices visual system — wordmark, type scale, palette, and core components.' },
+
+          { type: 'heading', text: 'Designed and Shipped' },
+          { type: 'text', text: 'I designed the site and built it as a live static site (HTML/CSS/JS), deployed and reachable at a real URL — not a set of slides passed around a room.' },
+          { type: 'callout', kind: 'alt', k: 'Outcome', text: 'Built and deployed as a live static site, so the founder had a real, ownable asset used in the company’s investor pitch — not just a mockup.' }
+        ]
+      },
       next: { slug: 'neta-ai' }
     }
 
