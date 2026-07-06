@@ -76,6 +76,9 @@ figure.hero { margin: 36px 0 0; }
    the full mark, letterboxed on the matching green panel. */
 @media (max-width: 640px) { .hero-img { object-fit: contain; } }
 
+/* Top Voices' hero is a full-page site screenshot — show it whole (no 16/9 crop). */
+body[data-slug="top-voices"] .hero-img { aspect-ratio: auto; height: auto; background: transparent; }
+
 /* real images inside content blocks (fall back to .ph placeholders when no src) */
 .shot-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); display: block; }
 .shot-img.contain { object-fit: contain; background: #fbfbfa; }
