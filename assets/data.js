@@ -438,11 +438,20 @@ window.SITE = {
           { type: 'heading', text: 'Visual System' },
           { type: 'lede', text: 'Premium and editorial — not another SaaS gradient.' },
           { type: 'text', text: 'A serif display headline over an ink-in-water hero sets a confident, editorial tone; a clean sans carries the body. Dark and outlined CTA pills, image-forward industry cards, and a warm off-white ground keep the whole thing feeling considered — the visual argument that a small team can already look category-ready.' },
-          { type: 'image', src: '/assets/img/top-voices/style-guide.png', contain: true, label: 'Visual system', caption: 'The Top Voices visual system — wordmark, type scale, palette, and core components.' },
+
+          { type: 'heading', text: 'Responsive' },
+          { type: 'lede', text: 'The same editorial system, rebuilt for the phone.' },
+          { type: 'text', text: 'The nav collapses into a tap-to-open Menu; the industry cards drop to a single column; forms and CTAs go full-width. The type hierarchy and the cream-and-navy system stay intact — just re-flowed for a thumb.' },
+          { type: 'image', src: '/assets/img/top-voices/mobile-nav.png', label: 'Mobile — home & nav', caption: 'Home on mobile; the nav collapses into a tap-to-open Menu.' },
+          { type: 'image', src: '/assets/img/top-voices/mobile-industry.png', label: 'Mobile — industries', caption: 'The industries section reflows to a two-up card grid on mobile.' },
 
           { type: 'heading', text: 'Designed and Shipped' },
           { type: 'text', text: 'I designed the site and built it as a live static site (HTML/CSS/JS), deployed and reachable at a real URL — not a set of slides passed around a room.' },
-          { type: 'callout', kind: 'alt', k: 'Outcome', text: 'Built and deployed as a live static site, so the founder had a real, ownable asset used in the company’s investor pitch — not just a mockup.' }
+          { type: 'callout', kind: 'alt', k: 'Outcome', text: 'Built and deployed as a live static site, so the founder had a real, ownable asset used in the company’s investor pitch — not just a mockup.' },
+
+          { type: 'heading', text: 'Walkthrough' },
+          { type: 'lede', text: 'A quick pass through the live site.' },
+          { type: 'video', src: 'https://player.vimeo.com/video/1208000219?title=0&byline=0&portrait=0&dnt=1', label: 'Site walkthrough', caption: 'A walkthrough of the live Top Voices site.' }
         ]
       },
       next: { slug: 'neta-ai' }
